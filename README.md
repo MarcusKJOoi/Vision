@@ -1,22 +1,14 @@
-# Vision
-Please put all resources below for now.
+## Vision
+We made this project in 48 hours in GovHack 2018.
 
-Datasets
-https://2018.hackerspace.govhack.org/data_sets
+The concept is to create a website that groups various types of data from the open data set provided by the government and present them in a more user-friendly way. 
 
-https://www.govhack.org/handbook/toolkit/scraping/
-
-https://www.govhack.org/handbook/toolkit/unstructured-data/
-
-https://www.govhack.org/handbook/toolkit/working-with-tabular-data/
-
-https://www.govhack.org/handbook/competition/event-roadmap/
-
-https://www.govhack.org/handbook/competition/what-can-i-submit-as-a-hack/
-
-https://www.govhack.org/handbook/competition/what-data-do-i-use/
-
-https://www.govhack.org/handbook/competition/what-to-bring/
+#Development Team
+- [Marcus Ooi](https://github.com/MarcusKJOoi)
+- [Jonathan Yeung](https://github.com/YeungJonathan)
+- [Zain Shroff](https://github.com/zain610)
+- [Harsil Patel)(https://github.com/harsilspatel)
+- [Ishan Joshi](https://github.com/ish-joshi)
 
 ## API Details
 Google Map Api
