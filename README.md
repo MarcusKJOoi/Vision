@@ -1,5 +1,4 @@
 # Vision
-
 Please put all resources below for now.
 
 Datasets
@@ -19,6 +18,7 @@ https://www.govhack.org/handbook/competition/what-data-do-i-use/
 
 https://www.govhack.org/handbook/competition/what-to-bring/
 
+## API Details
 Google Map Api
 https://developers.google.com/maps/documentation/javascript/tutorial
 
