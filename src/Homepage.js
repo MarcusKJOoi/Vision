@@ -5,8 +5,18 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import GoogleMapReact from 'google-map-react';
 
 class Homepage extends Component {
+
+    static defaultProps = {
+        center: {
+            lat: -37.81,
+            lng: 144.96
+        },
+        zoom: 10
+    };
+
     state = {
         population: true,
         crimeRate: false,
@@ -23,7 +33,7 @@ class Homepage extends Component {
         const { classes } = this.props;
         const { population, crimeRate, school, housing, jobs} = this.state;
         return (
-            <div className="Homepage">
+            <div style={{ height: '100vh', width: '100%' }} className="Homepage">
             {/* <div className={classes.root}> */}
                 <FormControl component="fieldset" className="Homepage-formControl">
                 <FormLabel component="legend">Select what to display</FormLabel>
@@ -48,6 +58,13 @@ class Homepage extends Component {
                     />
                 </FormGroup>
             </FormControl>
+            <GoogleMapReact
+                bootstrapURLKeys={{ key: "AIzaSyCOTCo9ek5D5h2D4IUxnb9ZVkoK6-QP0-g" }}
+                defaultCenter={this.props.center}
+                defaultZoom={this.props.zoom}
+                className="Homepage-googleMap"
+            >
+            </GoogleMapReact>
             </div>
         )
     };
