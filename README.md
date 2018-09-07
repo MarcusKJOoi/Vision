@@ -7,7 +7,7 @@ The concept is to create a website that groups various types of data from the op
 - [Marcus Ooi](https://github.com/MarcusKJOoi)
 - [Jonathan Yeung](https://github.com/YeungJonathan)
 - [Zain Shroff](https://github.com/zain610)
-- [Harsil Patel)(https://github.com/harsilspatel)
+- [Harsil Patel](https://github.com/harsilspatel)
 - [Ishan Joshi](https://github.com/ish-joshi)
 
 ## API Details
