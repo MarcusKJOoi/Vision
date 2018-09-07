@@ -7,7 +7,7 @@ class Map extends Component {
         "right": "0",
         "top": "0",
         "padding": "10px",
-        "width": "62%",
+        "width": "75%",
         "height": "100%"
     }
 
