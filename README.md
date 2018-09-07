@@ -21,3 +21,5 @@ https://www.govhack.org/handbook/competition/what-to-bring/
 
 Google Map Api
 https://developers.google.com/maps/documentation/javascript/tutorial
+
+Google API Key: AIzaSyCOTCo9ek5D5h2D4IUxnb9ZVkoK6-QP0-g Use with key=API_KEY
