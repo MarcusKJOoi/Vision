@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google/maps": "^0.5.5",
     "@material-ui/core": "^3.0.2",
     "firebase": "^5.4.2",
     "google-map-react": "^1.0.6",

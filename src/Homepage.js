@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Filter from './components/Filter.js';
-import Map from './components/Map.js';
+import GoogleMap from './components/GoogleMap.js';
 
 class Homepage extends Component {
 
@@ -15,7 +15,7 @@ class Homepage extends Component {
                     </Toolbar>
                 </AppBar>
                 <Filter></Filter>
-                <Map></Map>
+                <GoogleMap></GoogleMap>
             </div>
         )
     };

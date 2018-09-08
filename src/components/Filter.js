@@ -13,8 +13,6 @@ class Filter extends Component {
             population: true,
             crimeRate: false,
             school: false,
-            housing: false,
-            jobs: false
         }
     }
 
