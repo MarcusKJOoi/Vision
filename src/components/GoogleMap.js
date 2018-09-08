@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import './GoogleMap.css';
 import { FaIdBadge } from 'react-icons/fa';
 // import getLatLng from '../getLatLng';
 // import crime from '../icons/round-sentiment_very_dissatisied-24px.svg';
