@@ -34,6 +34,34 @@ class GoogleMap extends Component {
     //     })
     // }
 
+    renderMarkers(map, maps) {
+        let marker = new maps.Marker({
+          position: {
+            lat: -37.81,
+            lng: 144.96
+        },
+          map,
+          title: 'Hello World!'
+        });
+      }
+
+    drawPolygons(map,maps) {
+        (new maps.Polygon({
+            paths: [
+                {lat: -37.81-1, lng: 144.96-1},
+                {lat: -37.81+1, lng: 144.96+1},
+                {lat: -37.81+1, lng: 144.96-1}
+            ],
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        })).setMap(map)
+
+    }
+      
+
     static defaultProps = {
         center: {
             lat: -37.81,
@@ -43,6 +71,14 @@ class GoogleMap extends Component {
     };
 
     render() {
+
+        const coordinates = [
+            {lat: -37.81-10, lng: 144.96-10},
+            {lat: -37.81-10, lng: 144.96+10},
+            {lat: -37.81+10, lng: 144.96+10},
+            {lat: -37.81+10, lng: 144.96-10}
+        ]
+
         // this.setState({ lat, lng } = getLatLng("3000 Australia"));
         return (
             <div style={{ height: '100vh', width: '100%' }}>
@@ -52,7 +88,9 @@ class GoogleMap extends Component {
                     defaultZoom={this.props.zoom}
                     style={this.style}
                     onClick={(x,y) => console.log(x,y)}
+                    onGoogleApiLoaded={({map, maps}) => this.drawPolygons(map, maps)}
                     >
+                    
                     <h3 style={{ height:'3%', width:'3%' }} lat={-37.81} lng={144.96}> <FaIdBadge size={this.props.zoom * 2} /></h3>
                     {/* {this.renderMarkers('crime', crime)} */}
                     {/* <Button lat={-37.81} lng={144.96}></Button> */}
