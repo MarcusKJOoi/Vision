@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import './GoogleMap.css';
 import { FaIdBadge } from 'react-icons/fa';
 // import getLatLng from '../getLatLng';
 // import crime from '../icons/round-sentiment_very_dissatisied-24px.svg';
@@ -54,7 +53,7 @@ class GoogleMap extends Component {
                     style={this.style}
                     onClick={(x,y) => console.log(x,y)}
                     >
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.81} lng={144.96}> <FaIdBadge /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.81} lng={144.96}> <FaIdBadge size={this.props.zoom * 2} /></h3>
                     {/* {this.renderMarkers('crime', crime)} */}
                     {/* <Button lat={-37.81} lng={144.96}></Button> */}
                     {/* <AnyReactComponent  style={{"font": "100%" ,"font-size": "1em"}} lat={-37.81} lng={144.96} text='🚀'  /> */}
