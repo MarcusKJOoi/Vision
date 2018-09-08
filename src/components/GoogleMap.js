@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import './GoogleMap.css';
 // import getLatLng from '../getLatLng';
 // import crime from '../icons/round-sentiment_very_dissatisied-24px.svg';
 // import icons from '../icons/icons.js';
@@ -43,7 +44,7 @@ class GoogleMap extends Component {
                     style={this.style}
                     >
                     {/* <Button lat={-37.81} lng={144.96}></Button> */}
-                    <AnyReactComponent lat={-37.81} lng={144.96} text='test' />
+                    <AnyReactComponent style={{"font": 2000 ,"size": 2000}} lat={-37.81} lng={144.96} text='🚀'  />
                 </GoogleMapReact>
             </div>
         )
