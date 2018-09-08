@@ -13,6 +13,3 @@ The concept is to create a website that groups various types of data from the op
 ## API Details
 Google Map Api
 https://developers.google.com/maps/documentation/javascript/tutorial
-
-Google API Key: AIzaSyCOTCo9ek5D5h2D4IUxnb9ZVkoK6-QP0-g 
-Use with <code>key=API_KEY</code>
