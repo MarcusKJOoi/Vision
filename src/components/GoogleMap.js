@@ -48,6 +48,7 @@ class GoogleMap extends Component {
     //     return marker;
     //   }
 
+<<<<<<< HEAD
     drawPolygons(map, maps, path) {
         let boundary = (new maps.Polygon({
             paths: 
@@ -143,6 +144,22 @@ class GoogleMap extends Component {
         }));
         boundary.setMap(map);
     }
+=======
+    // drawPolygons(map,maps) {
+    //     (new maps.Polygon({
+    //         paths: [
+    //             {lat: -37.81-1, lng: 144.96-1},
+    //             {lat: -37.81+1, lng: 144.96+1},
+    //             {lat: -37.81+1, lng: 144.96-1}
+    //         ],
+    //       strokeColor: '#FF0000',
+    //       strokeOpacity: 0.8,
+    //       strokeWeight: 2,
+    //       fillColor: '#FF0000',
+    //       fillOpacity: 0.35
+    //     })).setMap(map)
+    // }
+>>>>>>> 90e3a3d8f7d5d4ebd9595a8f36c977c50c8766ff
       
     // checkFilters(map, maps) {
     //     if(this.props.filter.crime) this.drawPolygons(map, maps);
@@ -159,6 +176,7 @@ class GoogleMap extends Component {
     // map is the Map object that we make in the website
     // maps refers to the Google Maps API
     // you can pass in other stuff as well, to fill with info
+<<<<<<< HEAD
     // renderMarkers(map, maps, data) {
     //     for (let a in data) {
     //         let marker = new maps.Marker({
@@ -167,6 +185,16 @@ class GoogleMap extends Component {
     //             });
     //         return marker;
     //     }
+=======
+    renderMarkers(map, maps, data) {
+        for (let a in data) {
+            let marker = new maps.Marker({
+                    position: a.location,
+                    map: map,
+                });
+            return marker;
+        }
+>>>>>>> 90e3a3d8f7d5d4ebd9595a8f36c977c50c8766ff
         // let marker = new maps.Marker({
         //     id: 'test',
         //     position: { lat: -37.81, lng: 144.96},
@@ -175,6 +203,7 @@ class GoogleMap extends Component {
         // });
         // console.log(data);
         // return marker;
+<<<<<<< HEAD
     // }
 
     // _onClick(obj) {
@@ -185,6 +214,31 @@ class GoogleMap extends Component {
     // }
 
     render() {
+=======
+    }
+
+    _onClick(obj) {
+        console.log(obj.x, obj.y, obj.lat, obj.lng, obj.event);
+        // let userLat = parseFloat(obj.lat).toFixed(2);
+        // let userLng = parseFloat(obj.lng).toFixed(2);
+        // let userCoordinates = (userLat, userLng);
+    }
+    // let geocoder = new GoogleMap.
+    // reverseGeocodeLatLng(geocode, map, infoWindow, userInput) {
+    //     geocoder.
+    // }
+
+    render() {
+
+        // const coordinates = [
+        //     {lat: -37.81-10, lng: 144.96-10},
+        //     {lat: -37.81-10, lng: 144.96+10},
+        //     {lat: -37.81+10, lng: 144.96+10},
+        //     {lat: -37.81+10, lng: 144.96-10}
+        // ]
+
+        // this.setState({ lat, lng } = getLatLng("3000 Australia"));
+>>>>>>> 90e3a3d8f7d5d4ebd9595a8f36c977c50c8766ff
         return (
             <div style={{ height: '100vh', width: '100%' }}>
                 <GoogleMapReact
@@ -193,9 +247,16 @@ class GoogleMap extends Component {
                     defaultZoom={this.props.zoom}
                     style={this.style}
                     onClick={(x,y) => console.log(x,y)}   
+<<<<<<< HEAD
                     onGoogleApiLoaded={({map, maps}) => this.drawPolygons(map, maps)}                 
                     yesIWantToUseGoogleMapApiInternals={true}
                     >
+=======
+                    onGoogleApiLoaded={(map, maps) => this.renderMarkers(map, maps, crime_array)}                 
+                    yesIWantToUseGoogleMapApiInternals={true}
+                    >
+                    {/* <Icon props={ {data: crime_array}}></Icon> */}
+>>>>>>> 90e3a3d8f7d5d4ebd9595a8f36c977c50c8766ff
                     <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.966937}> <FaExclamation size={this.props.zoom * 2} /></h3>
                     <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.968937}> <FaExclamation size={this.props.zoom * 2} /></h3>
                     <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.970937}> <FaExclamation size={this.props.zoom * 2} /></h3>
@@ -224,6 +285,10 @@ class GoogleMap extends Component {
                     <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.79107126} lng={144.8940131}> <FaSchool size={this.props.zoom * 2} /></h2>
                     <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.782934} lng={144.845687}> <FaSchool size={this.props.zoom * 2} /></h2>
                     <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.756022} lng={144.814184}> <FaSchool size={this.props.zoom * 2} /></h2>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90e3a3d8f7d5d4ebd9595a8f36c977c50c8766ff
                 
                 </GoogleMapReact>
             </div>
