@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { FaIdBadge } from 'react-icons/fa';
 import { connect } from 'react-redux';
-// import $ from 'jquery';
-// const crime = require('../crimeRate.json');
+import { Marker } from "react-google-maps";
+import getLatLng from '../getLatLng';
+// import getLatLng from '../getLatLng';
+// import crime from '../icons/round-sentiment_very_dissatisied-24px.svg';
+// import icons from '../icons/icons.js';
+// const crime = '../icons'
+// import Button from '@material-ui/core/Button';
+// import crime from '../icons/round-sentiment_very_dissatisfied-24px.svg';
+const AnyReactComponent = ({text}) => <div style={{background: "red", width: 100, height: 100}}>{text}</div>;
 
 class GoogleMap extends Component {
     style = {
