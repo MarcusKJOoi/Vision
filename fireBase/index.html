@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		
+		<h1 id = "databaseOne"></h1>
+		
+		<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyDURexKEhuTujRxljZMAtgn92YvraiMpdU",
+				authDomain: "vision-215704.firebaseapp.com",
+				databaseURL: "https://vision-215704.firebaseio.com",
+				projectId: "vision-215704",
+				storageBucket: "vision-215704.appspot.com",
+				messagingSenderId: "405876914949"
+			};
+			firebase.initializeApp(config);
+			
+			var databaseOne = document.getElementById('database');
+			var ref = firebase.database().ref("vision-215704").child('crimes');
+			ref.once("value").then(function(snapshot){
+				var postcode = snapshot.key;
+				
+			})
+			console.log(ref)
+
+			
+			
+			
+		</script>
+	</body>
+</html>
