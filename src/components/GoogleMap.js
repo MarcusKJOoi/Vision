@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { FaIdBadge } from 'react-icons/fa';
 import { connect } from 'react-redux';
-import { Marker } from "react-google-maps";
-import getLatLng from '../getLatLng';
 // import getLatLng from '../getLatLng';
 // import crime from '../icons/round-sentiment_very_dissatisied-24px.svg';
 // import icons from '../icons/icons.js';
