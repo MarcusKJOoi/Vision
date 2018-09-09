@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { FaExclamation } from 'react-icons/fa'
+import { FaExclamation } from 'react-icons/fa';
+import { FaSchool } from 'react-icons/fa';
 import { connect } from 'react-redux';
 import '../firebaseConn.mjs';
 import crime_array from '../firebaseConn.mjs';
@@ -144,6 +145,21 @@ class GoogleMap extends Component {
                     <h3 style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8126334}> <FaExclamation size={this.props.zoom * 2} /></h3>
                     <h3 style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8146334}> <FaExclamation size={this.props.zoom * 2} /></h3>
                     <h3 style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8166334}> <FaExclamation size={this.props.zoom * 2} /></h3>
+
+
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.7090333}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.780598} lng={144.7122282}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.784581} lng={144.8138053}> <FaSchool size={this.props.zoom * 2} /></h2>                    
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.722259} lng={144.9029772}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.6966685} lng={144.70027816}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.704377} lng={144.7019467}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.711568} lng={144.60819202}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.812887} lng={144.954425}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.79107126} lng={144.8940131}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.782934} lng={144.845687}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.756022} lng={144.814184}> <FaSchool size={this.props.zoom * 2} /></h2>
+
+                
                 </GoogleMapReact>
             </div>
         )
