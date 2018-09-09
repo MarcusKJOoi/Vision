@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import './Filter.css';
 import FormControl from '@material-ui/core/FormControl';
-// import FormLabel from '@material-ui/core/FormLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import { connect } from 'react-redux';
 
 class Filter extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            population: true,
-            crimeRate: false,
-            school: false,
-        }
-    }
+    // constructor(props) {
+        // super(props);
+        // this.state = {
+        //     population: true,
+        //     crimeRate: false,
+        //     school: false,
+        // }
+    // }
 
-    _handleChange = name => event => {
-        this.setState({ [name]: event.target.checked });
+    _handleChange = event => {
+        this.props.dispatch({ type: 'TOGGLE', id: event.target.value })
     };
 
     render() {
@@ -29,19 +29,19 @@ class Filter extends Component {
                 <FormGroup>
                     <FormControlLabel
                     control={
-                        <Checkbox checked={this.state.population} onChange={this._handleChange('population')} value="population" />
+                        <Checkbox checked={this.props.filters.population} onChange={this._handleChange} value="population" />
                     }
                     label="Population"
                     />
                     <FormControlLabel
                     control={
-                        <Checkbox checked={this.state.crimeRate} onChange={this._handleChange('crimeRate')} value="crimeRate" />
+                        <Checkbox checked={this.props.filters.crimeRate} onChange={this._handleChange} value="crimeRate" />
                     }
                     label="Crime rate"
                     />
                     <FormControlLabel
                     control={
-                        <Checkbox checked={this.state.school} onChange={this._handleChange('school')} value="school" />
+                        <Checkbox checked={this.props.filters.school} onChange={this._handleChange} value="school" />
                     }
                     label="Schools"
                     />
@@ -52,4 +52,8 @@ class Filter extends Component {
     }
 }
 
-export default Filter;
+const mapStateToProps = (state) => ({
+    filters: state.filters
+});
+
+export default connect(mapStateToProps) (Filter);

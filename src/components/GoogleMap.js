@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { FaIdBadge } from 'react-icons/fa';
-import Geocode from "react-geocode";
-// import getLatLng from '../getLatLng';
-// import crime from '../icons/round-sentiment_very_dissatisied-24px.svg';
-// import icons from '../icons/icons.js';
-// const crime = '../icons'
-// import Button from '@material-ui/core/Button';
-// import crime from '../icons/round-sentiment_very_dissatisfied-24px.svg';
-const AnyReactComponent = ({text}) => <div style={{background: "red", width: 100, height: 100}}>{text}</div>;
-Geocode.setApiKey("AIzaSyCOTCo9ek5D5h2D4IUxnb9ZVkoK6-QP0-g");
+// import $ from 'jquery';
+// const crime = require('../crimeRate.json');
 
 class GoogleMap extends Component {
     style = {
@@ -21,31 +14,29 @@ class GoogleMap extends Component {
         "height": "100%"
     }
     
-    // renderMarkers = (group, icon) => {
-    //     const { itinerary } = this.props;
-    //     const gp = itinerary[group]
-    //     if(!gp){
-    //         return
+    // getData(jsonFile) {
+    //     let arr = [];
+    //     for(let x in jsonFile) {
+    //         arr.push([x, jsonFile[x]]);
     //     }
-    //     return gp.map(g=>{
-    //         if(!g['lat_lng']){
-    //             return
-    //         }
-    //         const {lat,lng} = g['lat_lng']
-    //         return <img lat={lat} lng={lng} src={icon} width={20} height={20}/>
-    //     })
+    //     console.log(arr);
+    //     for(let y in arr) {
+    //         let z = y[0]
+    //         new GoogleMap.maps.Map
+    //     }
     // }
 
-    renderMarkers(map, maps) {
-        let marker = new maps.Marker({
-          position: {
-            lat: -37.81,
-            lng: 144.96
-        },
-          map,
-          title: 'Hello World!'
-        });
-      }
+    // renderMarkers(map, maps) {
+    //     let marker = new maps.Marker({
+    //       position: {
+    //         lat: -37.81,
+    //         lng: 144.96
+    //     },
+    //       map: map,
+    //       title: 'Hello World!'
+    //     });
+    //     return marker;
+    //   }
 
     drawPolygons(map,maps) {
         (new maps.Polygon({
@@ -88,9 +79,9 @@ class GoogleMap extends Component {
 
     _onClick(obj) {
         console.log(obj.x, obj.y, obj.lat, obj.lng, obj.event);
-        let userLat = parseFloat(obj.lat).toFixed(2);
-        let userLng = parseFloat(obj.lng).toFixed(2);
-        let userCoordinates = (userLat, userLng);
+        // let userLat = parseFloat(obj.lat).toFixed(2);
+        // let userLng = parseFloat(obj.lng).toFixed(2);
+        // let userCoordinates = (userLat, userLng);
     }
     // let geocoder = new GoogleMap.
     // reverseGeocodeLatLng(geocode, map, infoWindow, userInput) {
@@ -99,12 +90,12 @@ class GoogleMap extends Component {
 
     render() {
 
-        const coordinates = [
-            {lat: -37.81-10, lng: 144.96-10},
-            {lat: -37.81-10, lng: 144.96+10},
-            {lat: -37.81+10, lng: 144.96+10},
-            {lat: -37.81+10, lng: 144.96-10}
-        ]
+        // const coordinates = [
+        //     {lat: -37.81-10, lng: 144.96-10},
+        //     {lat: -37.81-10, lng: 144.96+10},
+        //     {lat: -37.81+10, lng: 144.96+10},
+        //     {lat: -37.81+10, lng: 144.96-10}
+        // ]
 
         // this.setState({ lat, lng } = getLatLng("3000 Australia"));
         return (
@@ -127,7 +118,5 @@ class GoogleMap extends Component {
         )
     }    
 }
-
-const mapStateToProps = ({ itinerary }) => ({ itinerary });
 
 export default GoogleMap;

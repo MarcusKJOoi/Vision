@@ -4,27 +4,24 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Filter from './components/Filter.js';
 import GoogleMap from './components/GoogleMap.js';
 import './components/Filter.css';
-import $ from 'jquery';
-
-const crime = require('./crimeRate.json');
 
 class Homepage extends Component {
 
-
-    // getCrimeData(jsonFile) {
-    //     let arr = [];
-    //     for(let x in jsonFile) {
-    //         arr.push([x, jsonFile[x]]);
-    //     }
-    //     console.log(arr);
-    //     for(let y in arr) {
-    //         let z = y[0]
-    //         new GoogleMap.maps.Map
+    // constructor(props) {
+    //     super(props);
+    //     this.handler = this.handler.bind(this)
+    //     this.state = {
+    //         filters: {population: true, crimeRate: false, school: false}
     //     }
     // }
 
+    // handler(name, e) {
+    //     e.preventDefault()
+    //     this.setState({ [name]: e.target.checked })
+    // }
+
     render() {  
-        // this.getCrimeData(crime); 
+        // this.getData(crime); 
         return (
             <div>
                 <AppBar position="static">
