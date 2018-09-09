@@ -5,7 +5,6 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { connect } from 'react-redux';
-import { FaExclamation } from 'react-icons/fa';
 class Filter extends Component {
 
     _handleChange = event => {
