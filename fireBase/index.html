@@ -24,8 +24,13 @@
 			firebase.initializeApp(config);
 			
 			var databaseOne = document.getElementById('database');
-			var dbRef = firebase.database().ref().child('text');
-			dbRef.on('value', snp=>databaseOne.innerText = snap.val());
+			var ref = firebase.database().ref("vision-215704").child('crimes');
+			ref.once("value").then(function(snapshot){
+				var postcode = snapshot.key;
+				
+			})
+			console.log(ref)
+
 			
 			
 			
