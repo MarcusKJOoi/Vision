@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { FaIdBadge } from 'react-icons/fa';
+import { connect } from 'react-redux';
 // import $ from 'jquery';
 // const crime = require('../crimeRate.json');
 
@@ -51,9 +52,11 @@ class GoogleMap extends Component {
           fillColor: '#FF0000',
           fillOpacity: 0.35
         })).setMap(map)
-
     }
       
+    // checkFilters(map, maps) {
+    //     if(this.props.filter.crime) this.drawPolygons(map, maps);
+    // }
 
     static defaultProps = {
         center: {
@@ -107,8 +110,8 @@ class GoogleMap extends Component {
                     style={this.style}
                     onClick={(x,y) => console.log(x,y)}
                     onGoogleApiLoaded={({map, maps}) => this.drawPolygons(map, maps)}
+                    yesIWantToUseGoogleMapApiInternals={true}
                     >
-                    
                     <h3 style={{ height:'3%', width:'3%' }} lat={-37.81} lng={144.96}> <FaIdBadge size={this.props.zoom * 2} /></h3>
                     {/* {this.renderMarkers('crime', crime)} */}
                     {/* <Button lat={-37.81} lng={144.96}></Button> */}
@@ -119,4 +122,8 @@ class GoogleMap extends Component {
     }    
 }
 
-export default GoogleMap;
+const mapStateToProps = (state) => ({
+    filters: state.filters
+});
+
+export default connect(mapStateToProps) (GoogleMap);

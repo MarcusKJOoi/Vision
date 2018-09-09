@@ -16,7 +16,6 @@ const initialState = {
 
 
 const reducer = ((state = initialState, action) => {
-    console.log(action);
     switch(action.type) {
         case 'TOGGLE':
             return {
@@ -24,7 +23,7 @@ const reducer = ((state = initialState, action) => {
                 filters: {
                     ...state.filters    ,
                     [action.id]: !state.filters[action.id]
-                }
+                }   
             }
         default:
             return state;

@@ -1,5 +1,5 @@
 // import * as admin from 'firebase-admin';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 // var admin = require('firebase-admin');
 // var serviceAccount = require("/Users/zainshroff/Desktop/apps/vision-database-privatekey/vision-215704-firebase-adminsdk-04l3y-7430ae452b.json");
@@ -37,8 +37,6 @@ data_crime.orderByKey().on("value", function(snapshot) {
   snapshot.forEach(function(data){
     let postcode = data.key
     let crimeStat = data.val();
-    
-    
     console.log("The key is: "+ data.key + " and the value is " + data.val())
   })
 });

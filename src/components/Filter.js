@@ -17,7 +17,7 @@ class Filter extends Component {
     // }
 
     _handleChange = event => {
-        this.props.dispatch({ type: 'TOGGLE', id: event.target.value })
+        this.props.dispatch({ type: 'TOGGLE', id: event.target.value });
     };
 
     render() {
