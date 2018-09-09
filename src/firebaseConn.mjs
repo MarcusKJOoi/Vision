@@ -52,7 +52,7 @@ data_crime.orderByKey().endAt("3101").on("value", function(snapshot) {
     }
     // console.log("The key is: "+ data.key + " and the value is " + data.val())
   })
-  console.log(crime_array);
+  // console.log(crime_array);
 });
 
 // let data_school = db.ref("/school");

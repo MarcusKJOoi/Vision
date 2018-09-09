@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { FaIdBadge } from 'react-icons/fa';
+import { FaExclamation } from 'react-icons/fa'
 import { connect } from 'react-redux';
 import '../firebaseConn.mjs';
 import crime_array from '../firebaseConn.mjs';
+// import Icon from '../icons/icons.js';
 // import getLatLng from '../getLatLng';
-// import crime from '../icons/round-sentiment_very_dissatisied-24px.svg';
-// import icons from '../icons/icons.js';
-// const crime = '../icons'
-// import Button from '@material-ui/core/Button';
-// import crime from '../icons/round-sentiment_very_dissatisfied-24px.svg';
 
 class GoogleMap extends Component {
     style = {
@@ -21,6 +17,12 @@ class GoogleMap extends Component {
         "height": "100%"
     }
     
+    // Icon(data) {
+    //     for(let i in data) {
+    //         return <h3 style={{ height:'3%', width:'3%' }} lat={i.lat} lng={i.lng}> <FaIdBadge size={this.props.zoom * 2} /></h3>
+    //     }
+    // }
+
     // getData(jsonFile) {
     //     let arr = [];
     //     for(let x in jsonFile) {
@@ -125,10 +127,23 @@ class GoogleMap extends Component {
                     onGoogleApiLoaded={(map, maps) => this.renderMarkers(map, maps, crime_array)}                 
                     yesIWantToUseGoogleMapApiInternals={true}
                     >
-                    {/* <h3 style={{ height:'3%', width:'3%' }} lat={-37.81} lng={144.96}> <FaIdBadge size={this.props.zoom * 2} /></h3> */}
-                    {/* {this.renderMarkers('crime', crime)} */}
-                    {/* <Button lat={-37.81} lng={144.96}></Button> */}
-                    {/* <AnyReactComponent  style={{"font": "100%" ,"font-size": "1em"}} lat={-37.81} lng={144.96} text='🚀'  /> */}
+                    {/* <Icon props={ {data: crime_array}}></Icon> */}
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.966937}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.968937}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.970937}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8161444} lng={144.9804594}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8114504} lng={144.9253974}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8245483} lng={144.963937}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8170652} lng={144.9419122}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.7960195} lng={144.9006313}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8146251} lng={144.8456217}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8146251} lng={144.847217}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.819811} lng={144.8813738}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.835209} lng={144.8786231}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8571449} lng={144.8813738}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8126334}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8146334}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8166334}> <FaExclamation size={this.props.zoom * 2} /></h3>
                 </GoogleMapReact>
             </div>
         )
