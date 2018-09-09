@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { FaIdBadge } from 'react-icons/fa';
 import { connect } from 'react-redux';
+import '../firebaseConn.mjs';
+import crime_array from '../firebaseConn.mjs';
 // import getLatLng from '../getLatLng';
 // import crime from '../icons/round-sentiment_very_dissatisied-24px.svg';
 // import icons from '../icons/icons.js';
 // const crime = '../icons'
 // import Button from '@material-ui/core/Button';
 // import crime from '../icons/round-sentiment_very_dissatisfied-24px.svg';
-const AnyReactComponent = ({text}) => <div style={{background: "red", width: 100, height: 100}}>{text}</div>;
 
 class GoogleMap extends Component {
     style = {
@@ -44,20 +45,20 @@ class GoogleMap extends Component {
     //     return marker;
     //   }
 
-    drawPolygons(map,maps) {
-        (new maps.Polygon({
-            paths: [
-                {lat: -37.81-1, lng: 144.96-1},
-                {lat: -37.81+1, lng: 144.96+1},
-                {lat: -37.81+1, lng: 144.96-1}
-            ],
-          strokeColor: '#FF0000',
-          strokeOpacity: 0.8,
-          strokeWeight: 2,
-          fillColor: '#FF0000',
-          fillOpacity: 0.35
-        })).setMap(map)
-    }
+    // drawPolygons(map,maps) {
+    //     (new maps.Polygon({
+    //         paths: [
+    //             {lat: -37.81-1, lng: 144.96-1},
+    //             {lat: -37.81+1, lng: 144.96+1},
+    //             {lat: -37.81+1, lng: 144.96-1}
+    //         ],
+    //       strokeColor: '#FF0000',
+    //       strokeOpacity: 0.8,
+    //       strokeWeight: 2,
+    //       fillColor: '#FF0000',
+    //       fillOpacity: 0.35
+    //     })).setMap(map)
+    // }
       
     // checkFilters(map, maps) {
     //     if(this.props.filter.crime) this.drawPolygons(map, maps);
@@ -75,14 +76,21 @@ class GoogleMap extends Component {
     // maps refers to the Google Maps API
     // you can pass in other stuff as well, to fill with info
     renderMarkers(map, maps, data) {
-        let marker = new maps.Marker({
-            id: 'test',
-            position: { lat: -37.81, lng: 144.96},
-            map: map,
-            title: 'Hello World!'
-        });
-        console.log(data);
-        return marker;
+        for (let a in data) {
+            let marker = new maps.Marker({
+                    position: a.location,
+                    map: map,
+                });
+            return marker;
+        }
+        // let marker = new maps.Marker({
+        //     id: 'test',
+        //     position: { lat: -37.81, lng: 144.96},
+        //     map: map,
+        //     title: 'Hello World!'
+        // });
+        // console.log(data);
+        // return marker;
     }
 
     _onClick(obj) {
@@ -113,11 +121,11 @@ class GoogleMap extends Component {
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                     style={this.style}
-                    onClick={(x,y) => console.log(x,y)}
-                    onGoogleApiLoaded={({map, maps}) => this.drawPolygons(map, maps)}
+                    onClick={(x,y) => console.log(x,y)}   
+                    onGoogleApiLoaded={(map, maps) => this.renderMarkers(map, maps, crime_array)}                 
                     yesIWantToUseGoogleMapApiInternals={true}
                     >
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.81} lng={144.96}> <FaIdBadge size={this.props.zoom * 2} /></h3>
+                    {/* <h3 style={{ height:'3%', width:'3%' }} lat={-37.81} lng={144.96}> <FaIdBadge size={this.props.zoom * 2} /></h3> */}
                     {/* {this.renderMarkers('crime', crime)} */}
                     {/* <Button lat={-37.81} lng={144.96}></Button> */}
                     {/* <AnyReactComponent  style={{"font": "100%" ,"font-size": "1em"}} lat={-37.81} lng={144.96} text='🚀'  /> */}

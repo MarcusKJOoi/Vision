@@ -1,5 +1,6 @@
 // import * as admin from 'firebase-admin';
-import firebase from 'firebase/app';
+import firebase from 'firebase';
+import $ from 'jquery';
 
 // var admin = require('firebase-admin');
 // var serviceAccount = require("/Users/zainshroff/Desktop/apps/vision-database-privatekey/vision-215704-firebase-adminsdk-04l3y-7430ae452b.json");
@@ -30,19 +31,35 @@ const db = firebase.database();
 //   console.log(snapshot.val())
 // })
 
-
+let crime_array = [];
 // This script is for returning and rendering the data
 let data_crime = db.ref("/crimes");
-data_crime.orderByKey().on("value", function(snapshot) {
+data_crime.orderByKey().endAt("3101").on("value", function(snapshot) {
   snapshot.forEach(function(data){
-    let postcode = data.key
+    let postcode = data.key;
     let crimeStat = data.val();
-    console.log("The key is: "+ data.key + " and the value is " + data.val())
+    try {
+      $.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + postcode + "+Melbourne&key=AIzaSyCOTCo9ek5D5h2D4IUxnb9ZVkoK6-QP0-g",
+      function(response) {
+        // console.log(response);
+        if(response.status === 'OK') {
+          crime_array.push({location: response.results[0].geometry.location, crimeStat: crimeStat});
+        }
+      })
+    }
+    catch(err) {
+      console.log(err);
+    }
+    // console.log("The key is: "+ data.key + " and the value is " + data.val())
   })
+  console.log(crime_array);
 });
+
 // let data_school = db.ref("/school");
 // data_school.orderByKey().on("value", function(snapshot) {
 //   snapshot.forEach(function(data){
 //     console.log(data.key, data.val())
 //   })
 // });
+
+export default crime_array;
