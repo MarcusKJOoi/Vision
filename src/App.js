@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Homepage from './Homepage';
+import firebase from 'firebase';
+import 'firebase/app';
+
 
 class App extends Component {
   
