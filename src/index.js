@@ -8,12 +8,11 @@ import { Provider } from 'react-redux';
 
 const initialState = {
     filters: {
-        population: true, 
-        crimeRate: false, 
-        school: false
+        population: false, 
+        crimeRate: true, 
+        school: true
     }
 };
-
 
 const reducer = ((state = initialState, action) => {
     switch(action.type) {

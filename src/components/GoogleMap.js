@@ -129,35 +129,34 @@ class GoogleMap extends Component {
                     yesIWantToUseGoogleMapApiInternals={true}
                     >
                     {/* <Icon props={ {data: crime_array}}></Icon> */}
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.966937}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.968937}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.970937}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8161444} lng={144.9804594}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8114504} lng={144.9253974}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8245483} lng={144.963937}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8170652} lng={144.9419122}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.7960195} lng={144.9006313}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8146251} lng={144.8456217}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8146251} lng={144.847217}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.819811} lng={144.8813738}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.835209} lng={144.8786231}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.8571449} lng={144.8813738}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8126334}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8146334}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8166334}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.966937}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.968937}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.970937}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8161444} lng={144.9804594}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8114504} lng={144.9253974}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8245483} lng={144.963937}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8170652} lng={144.9419122}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.7960195} lng={144.9006313}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8146251} lng={144.8456217}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8146251} lng={144.847217}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.819811} lng={144.8813738}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.835209} lng={144.8786231}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8571449} lng={144.8813738}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8126334}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8146334}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8166334}> <FaExclamation size={this.props.zoom * 2} /></h3>
 
-
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.7090333}> <FaSchool size={this.props.zoom * 2} /></h2>
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.780598} lng={144.7122282}> <FaSchool size={this.props.zoom * 2} /></h2>
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.784581} lng={144.8138053}> <FaSchool size={this.props.zoom * 2} /></h2>                    
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.722259} lng={144.9029772}> <FaSchool size={this.props.zoom * 2} /></h2>
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.6966685} lng={144.70027816}> <FaSchool size={this.props.zoom * 2} /></h2>
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.704377} lng={144.7019467}> <FaSchool size={this.props.zoom * 2} /></h2>
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.711568} lng={144.60819202}> <FaSchool size={this.props.zoom * 2} /></h2>
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.812887} lng={144.954425}> <FaSchool size={this.props.zoom * 2} /></h2>
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.79107126} lng={144.8940131}> <FaSchool size={this.props.zoom * 2} /></h2>
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.782934} lng={144.845687}> <FaSchool size={this.props.zoom * 2} /></h2>
-                    <h2 style={{ height:'3%', width:'3%' }} lat={-37.756022} lng={144.814184}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.7090333}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.780598} lng={144.7122282}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.784581} lng={144.8138053}> <FaSchool size={this.props.zoom * 2} /></h2>                    
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.722259} lng={144.9029772}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.6966685} lng={144.70027816}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.704377} lng={144.7019467}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.711568} lng={144.60819202}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.812887} lng={144.954425}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.79107126} lng={144.8940131}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.782934} lng={144.845687}> <FaSchool size={this.props.zoom * 2} /></h2>
+                    <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.756022} lng={144.814184}> <FaSchool size={this.props.zoom * 2} /></h2>
 
                 
                 </GoogleMapReact>
@@ -170,4 +169,4 @@ const mapStateToProps = (state) => ({
     filters: state.filters
 });
 
-export default connect(mapStateToProps) (GoogleMap);
+export default connect(mapStateToProps)(GoogleMap);

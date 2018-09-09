@@ -5,16 +5,8 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { connect } from 'react-redux';
-
+import { FaExclamation } from 'react-icons/fa';
 class Filter extends Component {
-    // constructor(props) {
-        // super(props);
-        // this.state = {
-        //     population: true,
-        //     crimeRate: false,
-        //     school: false,
-        // }
-    // }
 
     _handleChange = event => {
         this.props.dispatch({ type: 'TOGGLE', id: event.target.value });
@@ -37,7 +29,7 @@ class Filter extends Component {
                     control={
                         <Checkbox checked={this.props.filters.crimeRate} onChange={this._handleChange} value="crimeRate" />
                     }
-                    label="Crime rate"
+                    label="Crime Rate" 
                     />
                     <FormControlLabel
                     control={
