@@ -15,3 +15,13 @@ Google Map Api
 https://developers.google.com/maps/documentation/javascript/tutorial
 
 Google API Key: AIzaSyCOTCo9ek5D5h2D4IUxnb9ZVkoK6-QP0-g Use with key=API_KEY
+
+## Requirements
+Node.JS v9+
+
+## Installing
+1. Clone/download from this repository.
+
+2. Open a terminal and run <code>npm install</code>.
+
+3. In the same terminal, run <code>npm start</code>.
