@@ -24,6 +24,8 @@ Node.JS v9+
 ## Installing
 1. Clone/download from this repository.
 
-2. Open a terminal and run <code>npm install</code>.
+2. Open a terminal and enter the directory in it.
 
-3. In the same terminal, run <code>npm start</code>.
+3. Run <code>npm install</code>.
+
+4. Run <code>npm start</code>.
