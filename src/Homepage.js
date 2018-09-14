@@ -6,20 +6,6 @@ import GoogleMap from './components/GoogleMap.js';
 import './components/Filter.css';
 
 class Homepage extends Component {
-
-    // constructor(props) {
-    //     super(props);
-    //     this.handler = this.handler.bind(this)
-    //     this.state = {
-    //         filters: {population: true, crimeRate: false, school: false}
-    //     }
-    // }
-
-    // handler(name, e) {
-    //     e.preventDefault()
-    //     this.setState({ [name]: e.target.checked })
-    // }
-
     render() {  
         // this.getData(crime); 
         return (

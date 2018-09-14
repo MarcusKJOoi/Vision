@@ -5,8 +5,6 @@ import { FaSchool } from 'react-icons/fa';
 import { connect } from 'react-redux';
 import '../firebaseConn.mjs';
 import crime_array from '../firebaseConn.mjs';
-// import Icon from '../icons/icons.js';
-// import getLatLng from '../getLatLng';
 
 class GoogleMap extends Component {
     style = {
@@ -16,25 +14,15 @@ class GoogleMap extends Component {
         "padding": "10px",
         "width": "75%",
         "height": "100%"
+    };
+
+    createCrimeIcon (position) {
+        return <p hidden={!this.props.filters.crimeRate} lat={position.lat} lng={position.lng}> <FaExclamation size={this.props.zoom * 2} /></p>
     }
     
-    // Icon(data) {
-    //     for(let i in data) {
-    //         return <h3 style={{ height:'3%', width:'3%' }} lat={i.lat} lng={i.lng}> <FaIdBadge size={this.props.zoom * 2} /></h3>
-    //     }
-    // }
-
-    // getData(jsonFile) {
-    //     let arr = [];
-    //     for(let x in jsonFile) {
-    //         arr.push([x, jsonFile[x]]);
-    //     }
-    //     console.log(arr);
-    //     for(let y in arr) {
-    //         let z = y[0]
-    //         new GoogleMap.maps.Map
-    //     }
-    // }
+    createCrimeIcons (crime_array) {
+        return crime_array.map(position => this.createCrimeIcon(position));
+    }
 
     // renderMarkers(map, maps) {
     //     let marker = new maps.Marker({
@@ -47,105 +35,101 @@ class GoogleMap extends Component {
     //     });
     //     return marker;
     //   }
-
-    drawPolygons(map, maps, path) {
-        let boundary = (new maps.Polygon({
-            paths: 
-            [ 
-                {
-                lat : 143.73960263,
-                lng : -37.5607152
-                }, {
-                lat : 143.74336264,
-                lng : -37.55872288
-                }, {
-                lat : 143.7447514,
-                lng : -37.55789937
-                }, {
-                lat : 143.74918916,
-                lng : -37.55526766
-                }, {
-                lat : 143.75068375,
-                lng : -37.55438125
-                }, {
-                lat : 143.75129968,
-                lng : -37.55397704
-                }, {
-                lat : 143.75798919,
-                lng : -37.54958656
-                }, {
-                lat : 143.7588456,
-                lng : -37.54901879
-                }, {
-                lat : 143.75911965,
-                lng : -37.54884845
-                }, {
-                lat : 143.76356199,
-                lng : -37.5459285
-                }, {
-                lat : 143.77069822,
-                lng : -37.54123705
-                }, {
-                lat : 143.77580819,
-                lng : -37.53782865
-                }, {
-                lat : 143.77610529,
-                lng : -37.5376424
-                }, {
-                lat : 143.7803153,
-                lng : -37.53941761
-                }, {
-                lat : 143.78305898,
-                lng : -37.5405744
-                }, {
-                lat : 143.7858779,
-                lng : -37.54175487
-                }, {
-                lat : 143.78725996,
-                lng : -37.54232498
-                }, {
-                lat : 143.78547197,
-                lng : -37.55205599
-                }, {
-                lat : 143.78527304,
-                lng : -37.55314298
-                }, {
-                lat : 143.78281503,
-                lng : -37.56667102
-                }, {
-                lat : 143.76320101,
-                lng : -37.56436903
-                }, {
-                lat : 143.76146201,
-                lng : -37.56416797
-                }, {
-                lat : 143.75558804,
-                lng : -37.56348704
-                }, {
-                lat : 143.74801102,
-                lng : -37.56260897
-                }, {
-                lat : 143.7381992,
-                lng : -37.56147218
-                }, {
-                lat : 143.73831857,
-                lng : -37.56139553
-                }, {
-                lat : 143.73960263,
-                lng : -37.5607152
-                } 
-            ],
-            strokeColor: '#FF0000',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#FF0000',
-            fillOpacity: 0.35
-        }));
-        boundary.setMap(map);
-    }
-      
-    // checkFilters(map, maps) {
-    //     if(this.props.filter.crime) this.drawPolygons(map, maps);
+    /* onGoogleApiLoaded={({map, maps}) => this.drawPolygons(map, maps)}*/
+    // drawPolygons(map, maps, path) {
+    //     let boundary = (new maps.Polygon({
+    //         paths: 
+    //         [ 
+    //             {
+    //             lat : 143.73960263,
+    //             lng : -37.5607152
+    //             }, {
+    //             lat : 143.74336264,
+    //             lng : -37.55872288
+    //             }, {
+    //             lat : 143.7447514,
+    //             lng : -37.55789937
+    //             }, {
+    //             lat : 143.74918916,
+    //             lng : -37.55526766
+    //             }, {
+    //             lat : 143.75068375,
+    //             lng : -37.55438125
+    //             }, {
+    //             lat : 143.75129968,
+    //             lng : -37.55397704
+    //             }, {
+    //             lat : 143.75798919,
+    //             lng : -37.54958656
+    //             }, {
+    //             lat : 143.7588456,
+    //             lng : -37.54901879
+    //             }, {
+    //             lat : 143.75911965,
+    //             lng : -37.54884845
+    //             }, {
+    //             lat : 143.76356199,
+    //             lng : -37.5459285
+    //             }, {
+    //             lat : 143.77069822,
+    //             lng : -37.54123705
+    //             }, {
+    //             lat : 143.77580819,
+    //             lng : -37.53782865
+    //             }, {
+    //             lat : 143.77610529,
+    //             lng : -37.5376424
+    //             }, {
+    //             lat : 143.7803153,
+    //             lng : -37.53941761
+    //             }, {
+    //             lat : 143.78305898,
+    //             lng : -37.5405744
+    //             }, {
+    //             lat : 143.7858779,
+    //             lng : -37.54175487
+    //             }, {
+    //             lat : 143.78725996,
+    //             lng : -37.54232498
+    //             }, {
+    //             lat : 143.78547197,
+    //             lng : -37.55205599
+    //             }, {
+    //             lat : 143.78527304,
+    //             lng : -37.55314298
+    //             }, {
+    //             lat : 143.78281503,
+    //             lng : -37.56667102
+    //             }, {
+    //             lat : 143.76320101,
+    //             lng : -37.56436903
+    //             }, {
+    //             lat : 143.76146201,
+    //             lng : -37.56416797
+    //             }, {
+    //             lat : 143.75558804,
+    //             lng : -37.56348704
+    //             }, {
+    //             lat : 143.74801102,
+    //             lng : -37.56260897
+    //             }, {
+    //             lat : 143.7381992,
+    //             lng : -37.56147218
+    //             }, {
+    //             lat : 143.73831857,
+    //             lng : -37.56139553
+    //             }, {
+    //             lat : 143.73960263,
+    //             lng : -37.5607152
+    //             } 
+    //         ],
+    //         strokeColor: '#FF0000',
+    //         strokeOpacity: 0.8,
+    //         strokeWeight: 2,
+    //         fillColor: '#FF0000',
+    //         fillOpacity: 0.35
+    //     }));
+    //     boundary.setMap(map);
     // }
 
     static defaultProps = {
@@ -185,6 +169,7 @@ class GoogleMap extends Component {
     // }
 
     render() {
+        console.log(crime_array);
         return (
             <div style={{ height: '100vh', width: '100%' }}>
                 <GoogleMapReact
@@ -193,10 +178,10 @@ class GoogleMap extends Component {
                     defaultZoom={this.props.zoom}
                     style={this.style}
                     onClick={(x,y) => console.log(x,y)}   
-                    onGoogleApiLoaded={({map, maps}) => this.drawPolygons(map, maps)}                 
                     yesIWantToUseGoogleMapApiInternals={true}
                     >
-                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.966937}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    {this.createCrimeIcons(crime_array)}
+                    {/* <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.966937}> <FaExclamation size={this.props.zoom * 2} /></h3>
                     <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.968937}> <FaExclamation size={this.props.zoom * 2} /></h3>
                     <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.970937}> <FaExclamation size={this.props.zoom * 2} /></h3>
                     <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8161444} lng={144.9804594}> <FaExclamation size={this.props.zoom * 2} /></h3>
@@ -211,7 +196,7 @@ class GoogleMap extends Component {
                     <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.8571449} lng={144.8813738}> <FaExclamation size={this.props.zoom * 2} /></h3>
                     <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8126334}> <FaExclamation size={this.props.zoom * 2} /></h3>
                     <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8146334}> <FaExclamation size={this.props.zoom * 2} /></h3>
-                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8166334}> <FaExclamation size={this.props.zoom * 2} /></h3>
+                    <h3 hidden={!this.props.filters.crimeRate} style={{ height:'3%', width:'3%' }} lat={-37.859343} lng={144.8166334}> <FaExclamation size={this.props.zoom * 2} /></h3> */}
 
                     <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.8152065} lng={144.7090333}> <FaSchool size={this.props.zoom * 2} /></h2>
                     <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.780598} lng={144.7122282}> <FaSchool size={this.props.zoom * 2} /></h2>
@@ -224,7 +209,7 @@ class GoogleMap extends Component {
                     <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.79107126} lng={144.8940131}> <FaSchool size={this.props.zoom * 2} /></h2>
                     <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.782934} lng={144.845687}> <FaSchool size={this.props.zoom * 2} /></h2>
                     <h2 hidden={!this.props.filters.school} style={{ height:'3%', width:'3%' }} lat={-37.756022} lng={144.814184}> <FaSchool size={this.props.zoom * 2} /></h2>
-                
+                    {console.log(crime_array)}
                 </GoogleMapReact>
             </div>
         )
