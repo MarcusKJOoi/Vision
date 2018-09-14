@@ -4,9 +4,7 @@ import { FaExclamation } from 'react-icons/fa';
 import { FaSchool } from 'react-icons/fa';
 import { connect } from 'react-redux';
 import '../firebaseConn.mjs';
-import crime_array from '../firebaseConn.mjs';
-// import Icon from '../icons/icons.js';
-// import getLatLng from '../getLatLng';
+
 
 class GoogleMap extends Component {
     style = {
