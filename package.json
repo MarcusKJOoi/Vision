@@ -5,7 +5,7 @@
   "dependencies": {
     "@google/maps": "^0.5.5",
     "@material-ui/core": "^3.0.2",
-    "firebase": "^5.4.2",
+    "firebase": "^7.14.0",
     "google-map-react": "^1.0.6",
     "jquery": "^3.3.1",
     "react": "^16.5.0",
